@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #70467b;
+    padding: 40px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: #a471e3;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #e4e2f7;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #0c0b0b;
+}
+
+button {
+    background: #003366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* RESULT COLORS */
+.genuine {
+    color: green;
+    font-weight: bold;
+}
+
+.fake {
+    color: red;
+    font-weight: bold;
+}
+
+.not-scholarship {
+    color: red;
+    font-weight: bold;
+}
+
+.admin-link {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #e7eef5;
+}
+/* ================= ADMIN TABLE STYLES ================= */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th {
+    background: #13037d;
+    color: rgb(245, 240, 240);
+    padding: 10px;
+}
+
+.admin-table td {
+    padding: 10px;
+    border-bottom: 1px solid #0c0c0c;
+}
+
+/* ADMIN RESULT COLORS */
+.admin-table .genuine {
+    color: #0f5132;
+    background: #d1e7dd;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.admin-table .fake {
+    color: #842029;
+    background: #f8d7da;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.admin-table .not-scholarship {
+    color: #842618;
+    background: #fff3cd;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+/* ================= ADMIN TABLE INSIDE COLORS ================= */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th {
+    background-color: #13037d;
+    color: #dfb5e6;
+    padding: 10px;
+}
+
+.admin-table td {
+    background-color: #a898f9;   /* inside table color */
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Zebra rows */
+.admin-table tr:nth-child(even) td {
+    background-color: #dcbff0;
+}
+
+/* Hover effect */
+.admin-table tr:hover td {
+    background-color: #f6f7f8;
+}
+
+        /* Prediction labels */
+        .admin-table .genuine {
+            color: #0f5132;
+            background-color: #d1e7dd;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .admin-table .fake {
+            color: #842029;
+            background-color: #f8d7da;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .admin-table .not-scholarship {
+            color: #664d03;
+            background-color: #fff3cd;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* Links inside table */
+        .admin-table a {
+            color: #1a73e8;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .admin-table a:hover {
+            color: #0b53c1;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .admin-table th, .admin-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    

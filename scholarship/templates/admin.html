@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Feedback Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <a href="{{ url_for('home') }}">← Back to Home</a>
+    <h2>📊 Admin Feedback Dashboard</h2>
+
+    <table class="admin-table">
+        <tr>
+            <th>Timestamp</th>
+            <th>Message</th>
+            <th>Prediction</th>
+            <th>User Feedback</th>
+            <th>Scholarship Link</th>
+        </tr>
+
+        {% for record in records %}
+        <tr class="{% if loop.index0 % 2 == 0 %}row-even{% else %}row-odd{% endif %}">
+            <td>{{ record.timestamp or 'N/A' }}</td>
+            <td>{{ record.message or 'N/A' }}</td>
+            <td>
+                <span class="{% if record.predicted_label == 'GENUINE' %}genuine
+                             {% elif record.predicted_label == 'FAKE' %}fake
+                             {% else %}not-scholarship{% endif %}">
+                    {{ record.predicted_label or 'N/A' }}
+                </span>
+            </td>
+            <td>{{ record.satisfaction or 'N/A' }}</td>
+            <td>
+                {% if record.scholarship_link %}
+                    <a href="{{ record.scholarship_link }}" target="_blank">View Link</a>
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Optional summary -->
+    {% if records %}
+    <div style="margin-top:20px;">
+        <strong>Average Rating:</strong> {{ avg_rating }}<br>
+        <strong>Satisfaction Rate:</strong> {{ satisfaction_rate }}%
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

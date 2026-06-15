@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scholarship Message Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .scholarship-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .scholarship-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🎓 Scholarship Message Checker</h2>
+
+    <form method="post">
+        <textarea name="message" placeholder="Enter scholarship message here..." required>{{ message }}</textarea>
+        <br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result %}
+    <hr>
+    <p>
+        Result:
+        <span class="{% if result == 'FAKE' %}fake
+                      {% elif result == 'GENUINE' %}genuine
+                      {% else %}not-scholarship{% endif %}">
+            {{ result }}
+        </span>
+    </p>
+    <p>Confidence: {{ confidence }}</p>
+
+    {% if link %}
+        <p>🎯 Scholarship Link:</p>
+        <a href="{{ link }}" target="_blank" class="scholarship-button">{{ link }}</a>
+    {% endif %}
+
+    <hr>
+    <h3>Give Feedback</h3>
+    <form method="post" action="{{ url_for('feedback') }}">
+        <input type="hidden" name="message" value="{{ message }}">
+        <input type="hidden" name="predicted_label" value="{{ result }}">
+        <input type="hidden" name="confidence" value="{{ confidence }}">
+        <input type="hidden" name="link" value="{{ link }}">
+
+        <p>Was this helpful?</p>
+        <label><input type="radio" name="satisfaction" value="Yes" required> Yes</label>
+        <label><input type="radio" name="satisfaction" value="No"> No</label>
+
+        <br><br>
+        <p>Rate this system:</p>
+        <select name="rating" required>
+            <option value="">Select</option>
+            <option value="1">⭐ 1</option>
+            <option value="2">⭐⭐ 2</option>
+            <option value="3">⭐⭐⭐ 3</option>
+            <option value="4">⭐⭐⭐⭐ 4</option>
+            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('admin') }}">🔐 Admin Panel</a>
+</div>
+</body>
+</html>

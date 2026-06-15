@@ -1,0 +1,8 @@
+timestamp,message,predicted_label,confidence,link,satisfaction,rating
+2026-03-05 15:40:41,Central Sector Scholarship,GENUINE,0.554,https://scholarships.gov.in,Yes,5
+2026-03-11 20:40:29,Prime Minister’s Scholarship Scheme,GENUINE,0.95,https://scholarships.gov.in,Yes,5
+2026-03-12 14:14:41,Central Sector Scholarship,GENUINE,0.95,https://scholarships.gov.in,Yes,3
+2026-03-12 14:48:09,AP Jnanabhumi Scholarship Portal,GENUINE,0.95,https://jnanabhumi.ap.gov.in,Yes,5
+2026-03-26 16:13:02,AP Jnanabhumi Scholarship Portal,GENUINE,0.95,https://jnanabhumi.ap.gov.in,Yes,3
+2026-04-16 12:21:09,Central Sector Scholarship,GENUINE,0.95,https://scholarships.gov.in,Yes,5
+2026-04-20 20:25:58,Jagananna Vidya Deevena Scholarship,GENUINE,0.95,https://jnanabhumi.ap.gov.in,Yes,5
